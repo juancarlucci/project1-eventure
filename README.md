@@ -1,24 +1,36 @@
-# README
+# about
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ E-ventures is a site where users can see events happening in their current city
 
-Things you may want to cover:
 
-* Ruby version
+## Technologies used:
 
-* System dependencies
+Ruby on Rails, API integration, brycpt, git, github, heroku, JavaScript, jQuery, CSS, HTML
 
-* Configuration
+## Process/approach:
 
-* Database creation
+Discuss purpose of app
+Whiteboard basic concept
+Wire-framing
+![image of wireframe](https://trello.com/b/jCxRWOel/wireframe-user-page)
 
-* Database initialization
+Create Client side including User and Events models.
 
-* How to run the test suite
+Link to heroku:
 
-* Services (job queues, cache servers, search engines, etc.)
+## Future development:
 
-* Deployment instructions
+- map of each event
+- individual event page
+- filters for type of events
+- Oauth Goog tec.
 
-* ...
+## Team Profiles
+
+[Manjila Nakarmi](https://github.com/Manjilan)
+
+[Felix Chow ](https://github.com/fchow2018)
+
+[Terrence Langston](https://github.com/ttime1100)
+
+[Juan Carlos Collins](https://github.com/juancarlucci)
