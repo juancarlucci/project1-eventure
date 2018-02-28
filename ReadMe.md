@@ -27,8 +27,10 @@ Link to heroku:
 
 ## Team Profiles
 
-Manjila Nakarmi ![link to github](https://github.com/Manjilan)
+ ![Manjila Nakarmi](https://github.com/Manjilan)
 
-Felix Chow ![link to github](https://github.com/fchow2018)
+![Felix Chow ](https://github.com/fchow2018)
 
-Terrence Langston ![link to github](https://github.com/ttime110)
+ ![Terrence Langston](https://github.com/ttime1100)
+
+ ![Juan Carlos Collins](https://github.com/juancarlucci)
