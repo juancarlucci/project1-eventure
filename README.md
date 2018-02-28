@@ -12,7 +12,11 @@ Ruby on Rails, API integration, brycpt, git, github, heroku, JavaScript, jQuery,
 Discuss purpose of app
 Whiteboard basic concept
 Wire-framing
+<<<<<<< HEAD
 [image of wireframe](https://trello.com/b/jCxRWOel/wireframe-user-page)
+=======
+![image of wireframe](https://trello.com/b/jCxRWOel/wireframe-user-page)
+>>>>>>> 4513ebb452f0c62a1898fc140caa67ce4713fb79
 
 Create Client side including User and Events models.
 
