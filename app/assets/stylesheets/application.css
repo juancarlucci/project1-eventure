@@ -12,4 +12,84 @@
  *
  *= require_tree .
  *= require_self
+
  */
+
+
+/********Base Styles********/
+* {
+  box-sizing: border-box;
+}
+
+body{
+  /* background-color: #8C647E; */
+  margin: 0;
+  background-image: url('pablo-unsplash.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+nav{
+  background-color: white;
+  width: 100%;
+  top: 0;
+  padding: 25px 30px;
+  text-align: right;
+}
+nav a{
+  padding: 0 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Josefin Sans;
+  color: #95B5B0;
+}
+img{
+  width: 50%;
+}
+nav img{
+  width: 200px;
+  height: 100%;
+  float: left;
+}
+p{
+  float:left;
+  width: 50%;
+  color: white;
+  font-size: 50px;
+  font-family: Josefin Sans;
+  padding: 20px;
+  background-color: gray;
+  opacity: .7;
+  margin: 2%;
+}
+h2{
+  text-align: center;
+}
+/**********Form**********/
+
+form{
+  background-color: white;
+  float: right;
+  width: 40%;
+  margin: 30px 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: Josefin Sans;
+}
+form input{
+  width: 80%;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  border-bottom: 1px solid grey;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: Josefin Sans;
+}
+form div{
+  width: 80%;
+  margin-left: 30px;
+}
