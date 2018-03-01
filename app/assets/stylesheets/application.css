@@ -82,6 +82,9 @@ form{
   text-transform: uppercase;
   font-family: Josefin Sans;
 }
+h1{
+  color: white;
+}
 form input{
   width: 80%;
   padding: 20px;
@@ -92,7 +95,31 @@ form input{
   font-size: 15px;
   font-family: Josefin Sans;
 }
-form div{
-  width: 80%;
-  margin-left: 30px;
+.myevents{
+  width: 60%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  border: 1px solid black;
+  position: absolute;
+  text-align: center;
+}
+.myevents h3{
+  background-color: gray;
+  padding: 3% 0;
+  margin-top: 0;
+  color: white;
+  text-transform: uppercase;
+  font-family: Josefin Sans;
+}
+
+main{
+  background-color: white;
+  width: 60%;
+  height: 300px;
+  position: relative;
+}
+#calendar{
+  width: 60%;
+  margin-left: 68%;
 }
