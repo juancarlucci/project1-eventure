@@ -43,6 +43,9 @@ nav a{
   font-family: Josefin Sans;
   color: #95B5B0;
 }
+nav img{
+  z-index: 1;
+}
 img{
   width: 50%;
 }
