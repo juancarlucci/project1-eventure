@@ -9,20 +9,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    if current_user == @user
-      if @user.update_attributes(user_params)
-        flash[:notice] = "Successfully updated profile."
-        redirect_to user_path(@user)
-      else
-        flash[:error] = @user.errors.full_messages.join(", ")
-        redirect_to edit_user_path(@user)
-      end
-    else
-      redirect_to user_path(current_user)
-    end
+    @user = User.create(user_params)
+    login(@user)
+    redirect_to @user
   end
 
   def show
+    @user = User.find_by_id(params[:id])
+    @events = Event.all
+
   end
 
   def destroy

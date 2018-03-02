@@ -1,0 +1,31 @@
+
+<header>
+  <%= render '/users/partials/navbar' %>
+  <h1>Welcome, <%= @user.first_name %></h1>
+
+</header>
+
+<main>
+  <div class= "myevents">
+    <h3>My Events</h3>
+
+  </div>
+  <div id="calendar">
+
+    <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(:q, "Search for:") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+    <!--Calendar  -->
+    <img src="../assets/calendar.png" >
+  </div>
+
+
+   <br>
+   <% end %>
+   <aside>
+     <!-- Events -->
+
+   </aside>
+</main>
