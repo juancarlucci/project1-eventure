@@ -1,6 +1,5 @@
 <nav>
   <img src="assets/logo.png" >
-  <%= link_to "About", root_path %>
   <% if current_user %>
     <%= link_to "Profile", user_path(current_user) %>
     <%= link_to "Log Out", logout_path %>
