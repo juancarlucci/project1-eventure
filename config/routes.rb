@@ -12,5 +12,4 @@ Rails.application.routes.draw do
   post '/events', to: 'events#create'
   get '/about', to: 'users#about'
 
-
 end

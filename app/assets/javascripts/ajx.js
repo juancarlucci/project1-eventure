@@ -1,15 +1,25 @@
-var pastHour_quakes_endpoint =
-  "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson";
+// var token = 'BA5XEL577APPWGLN4FNE3SDQLOW7A7ITGKHAVE7ULXYIQGK6GZ';
+
+// var token = 'GGAQ2BUKIRGJMZMU55YZ';
+var token = 'DQVX342GH577YJBOWRDB';
+// let fullURL = `https://www.eventbriteapi.com/v3/events/search/?token= ${token}`;
+let fullURL = "https://www.eventbriteapi.com/v3/events/search/?token=DQVX342GH577YJBOWRDB"
+let barca = "https://www.eventbriteapi.com/v3/events/search/?sort_by=distance&location.address=barcelona%2C+spain&start_date.keyword=this_week&token=DQVX342GH577YJBOWRDB"
+let sf = `https://www.eventbriteapi.com/v3/events/search/?q=Music&sort_by=distance&location.address=san+francisco&start_date.keyword=this_week&token=${token}`
+
+//Halim tab idea
 var tab=[]
+
 $.ajax({
   method: "GET",
-  url: pastHour_quakes_endpoint,
+  url: sf,
 
   success: function(json) {
-    displayQuakes(json);
+
+    displayEvents(json);
   },
   error: function() {
-    alert("There was an error getting earthquake data.");
+    alert("There was an error getting event data.");
   },
   beforeSend: function() {
     $("#page").append("Loading");
@@ -19,35 +29,48 @@ $.ajax({
   }
 });
 
-let displayQuakes = function(json) {
-tab=json.features
-  json.features.forEach(function(quake, i) {
 
+let displayEvents = function(json) {
 
-      var quakeInstance = `
+  tab = json.events;
+
+  json.events.forEach(function(event, i) {
+  // console.log(event);
+
+      var eventInstance = `
+        <div class="event_item">
           <p class="badge">${i}</p>
-          <p class="title">${quake.properties.place}</p>
+          <p class="title">${event.name.text}</p>
           <button onclick='save(${i})'></button>
-
+        </div>
          `;
 
-    $("#info").append(quakeInstance);
+    $("#info").append(eventInstance);
   });
 
-}; //end displayQuakes
+}; //end displayEvents
 
 events_list = [];
 function save(index){
-  console.log(events_list);
+  console.log(tab[index].description.text);
   events_list.push(tab[index]);
 
 
+
+  //Halim internal AJAX
   $.ajax({
-    url: '/events/1',
+    url: '/events',
     method:'POST',
     data: {
-      name:this.name,
-      descript:this.descriptions
+    event_name: tab[index].name.text,
+    event_description: tab[index].description.text
+
+    },
+    success: function(){
+      alert('added');
+    },
+    error:function(){
+      alert('not added')
     }
   });
 
