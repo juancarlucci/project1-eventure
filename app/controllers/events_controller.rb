@@ -8,8 +8,8 @@ class EventsController < ApplicationController
     end
 
     def create
-      @event = Event.create(event_params)
-      redirect_to events_path
+      # @event = Event.create(event_params)
+      # redirect_to events_path
     end
 
     def show
