@@ -36,8 +36,8 @@ class UsersController < ApplicationController
 
 
   def about
-    # redirect_to about_path
-    render :about
+    redirect_to about_path
+    # render :users/about.html.erb
   end
 
   private
