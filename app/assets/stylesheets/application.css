@@ -20,14 +20,21 @@
 * {
   box-sizing: border-box;
 }
-
 body{
-  /* background-color: #8C647E; */
+  margin: 0 auto;
+  font-family: Josefin Sans;
+}
+.header h1{
+  color: grey;
+}
+header{
   margin: 0;
   background-image: url('pablo-unsplash.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
 }
 nav{
   background-color: white;
@@ -40,9 +47,9 @@ nav a{
   padding: 0 20px;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: Josefin Sans;
   color: #95B5B0;
 }
+
 img{
   width: 50%;
 }
@@ -52,24 +59,41 @@ nav img{
   float: left;
 }
 p{
-  float:left;
   width: 50%;
-  color: white;
-  font-size: 50px;
-  font-family: Josefin Sans;
-  padding: 20px;
-  background-color: gray;
-  opacity: .7;
-  margin: 2%;
+  color: gray;
+  font-size: 40px;
+  padding: 5%;
 }
+.about p{
+   margin: 0;
+ }
+ .about{
+   width: 100%;
+   background-color: #95B5B0;
+   padding: 2%;
+   display: flex;
+ }
 h2{
   text-align: center;
 }
-/**********Form**********/
+.events{
+  border: 20px outset white;
+  width: 50%;
+  text-align: center;
+}
+section{
+  margin: 5% 2%;
+  background-color: white;
+  padding: 10%;
+}
+.about h2{
+  color: white;
+  text-transform: uppercase;
+}
+/********** Form **********/
 
 form{
   background-color: white;
-  float: right;
   width: 40%;
   margin: 30px 30px;
   border-radius: 10px;
@@ -77,7 +101,17 @@ form{
   flex-direction: column;
   align-items: center;
   text-transform: uppercase;
-  font-family: Josefin Sans;
+
+}
+h1{
+  color: white;
+}
+form div{
+  width: 100%;
+
+}
+div input{
+    margin: 0 auto;
 }
 form input{
   width: 80%;
@@ -87,9 +121,72 @@ form input{
   border-bottom: 1px solid grey;
   text-transform: uppercase;
   font-size: 15px;
-  font-family: Josefin Sans;
+
 }
-form div{
-  width: 80%;
-  margin-left: 30px;
+.myevents{
+  width: 60%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  border: 1px solid black;
+  position: absolute;
+  text-align: center;
+}
+.myevents h3{
+  background-color: gray;
+  padding: 3% 0;
+  margin-top: 0;
+  color: white;
+  text-transform: uppercase;
+
+}
+
+main{
+  background-color: white;
+  width: 60%;
+  height: 300px;
+  position: relative;
+
+}
+#calendar{
+  width: 60%;
+  margin-left: 68%;
+}
+footer{
+  text-align: center;
+  padding: 2% 0;
+  font-size: 20px;
+}
+aside p{
+  font-size: 20px;
+  padding: 0;
+  margin: 0 auto;
+}
+aside{
+  margin: 10% 0 0 2%;
+  width: 100%;
+}
+aside div{
+  display: flex;
+}
+aside h3{
+  margin-top: 0;
+  width: 40%;
+}
+aside button{
+  width: 20%;
+  height: 40%;
+}
+section div p{
+  font-size: 20px;
+  padding: 0;
+  margin: 0 auto;
+
+}
+.events p{
+  margin: 0 auto;
+}
+
+.events section{
+  padding: 0;
 }

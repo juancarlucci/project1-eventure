@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Event.create({event_name: Faker::Name.name, event_location: "Dolores Park", event_date: "March 21, 2018", event_url: "https://www.eventbrite.com/e/an-aggressive-approach-to-concise-writing-with-joe-welinske-tickets-17920884849", event_description: "Webinar Description\r\nWriting concisely is one of the fundamental skills" , event_image: nil})
+
+User.delete_all
+
+10.times do
+  User.create!(first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.safe_email,
+    password_digest: "password"
+    )
+    Event.create(
+      {event_name: Faker::Name.name,
+      event_location: "Dolores Park",
+      event_date: "March 21, 2018",
+      event_url: "https://www.eventbrite.com/e/an-aggressive-approach-to-concise-writing-with-joe-welinske-tickets-17920884849",
+      event_description: "Webinar Description\r\nWriting concisely is one of the fundamental skills" ,
+      event_image: nil})
+    end

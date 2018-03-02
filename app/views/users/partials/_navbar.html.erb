@@ -1,6 +1,10 @@
 <nav>
-  <img src="assets/logo.png">
-  <a href="#">About</a>
-  <a href="#">Sign up</a>
-  <a href="#">Log In</a>
+  <img src="assets/logo.png" >
+  <% if current_user %>
+    <%= link_to "Profile", user_path(current_user) %>
+    <%= link_to "Log Out", logout_path %>
+  <% else %>
+    <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Log In", login_path %>
+  <% end %>
 </nav>
