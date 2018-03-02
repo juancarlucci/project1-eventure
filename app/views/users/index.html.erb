@@ -2,7 +2,7 @@
 
 <!-- <img src="assets/pablo-unsplash.jpg"> -->
 <header>
-<% if current_user %>
+<% if !current_user %>
 <%= render '/users/partials/form' %>
 <% end %>
 </header>
