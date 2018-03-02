@@ -34,6 +34,12 @@ class UsersController < ApplicationController
     end
   end
 
+
+  def about
+    # redirect_to about_path
+    render :about
+  end
+
   private
 
   def user_params
