@@ -8,6 +8,14 @@
   <div class="column">
     <div class= "myevents">
       <h3>My Events</h3>
+      <!-- Events -->
+      <div id="event_list">
+        <% @events.each do |event| %>
+        <div>
+          <h3><%= event.event_name %></h3>
+        </div>
+        <% end %>
+    </div>
 
     </div>
     <div id="calendar">
@@ -24,21 +32,11 @@
 
 
   <aside>
-    <!-- Events -->
-    <% @events.each do |event| %>
-    <div>
-      <h3><%= event.event_name %></h3>
-      <div>
 
-        <p><%= event.event_location %></p>
-        <p><%= event.event_date %></p>
-        <p><%= event.event_description %></p>
-      </div>
-      <button>Add</button>
-    </div>
 
-    <br>
-    <% end %>
+    <div id="info"></div>
+
+
 
   </aside>
 

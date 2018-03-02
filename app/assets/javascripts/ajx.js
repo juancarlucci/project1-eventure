@@ -67,7 +67,7 @@ function save(index){
 
     },
     success: function(){
-      alert('added');
+      $('#event_list').append(`<h3>${data.event_name}</h3>`)
     },
     error:function(){
       alert('not added')
