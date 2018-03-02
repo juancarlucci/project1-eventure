@@ -66,8 +66,8 @@ function save(index){
     event_description: tab[index].description.text
 
     },
-    success: function(){
-      alert('added');
+    success: function(data){
+      $('#event_list').append(`<h3>${data.event_name}</h3>`)
     },
     error:function(){
       alert('not added')
