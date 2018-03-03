@@ -1,11 +1,11 @@
 <div><%= @user.first_name %> is attending the following event</div>
 
 <ul>
-  <% @libraries.each do |library| %>
+  <% @events.each do |event| %>
   <div>
-    <h3><%= library.name %></h3>
+    <h3><%= event.name %></h3>
     <% if current_user %>
-      <%= button_to "Join", library_users_path(library) %>
+      <%= button_to "Join", attendance_path(event) %>
     <% end %>
   </div>
   <br>

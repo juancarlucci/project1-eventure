@@ -13,24 +13,25 @@
         <% @events.each do |event| %>
         <div>
           <h3><%= event.event_name %></h3>
+          <%= button_to "Delete", {:controller => :events,
+      :action => 'destroy', :id => event.id }, :method => :delete %>
         </div>
         <% end %>
+      </div>
+
     </div>
 
-      </div>
-      <% end %>
-</div>
-    </div>
-    <div id="calendar">
-      <!--Calendar  -->
-      <%= image_tag "calendar.png" %>
-    </div>
   </div>
-  <%= form_tag("/search", method: "get") do %>
-      <%= label_tag(:q, "Search for:") %>
-      <%= text_field_tag(:q) %>
-      <%= submit_tag("Search") %>
-    <% end %>
+
+  <!-- <div id="calendar"> -->
+    <!--Calendar  -->
+    <!-- <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+    <% end %> -->
+  <!-- </div> -->
+
 
 
 
