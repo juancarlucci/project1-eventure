@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   get '/events/:id', to: 'events#show', as: 'event'
   post '/events', to: 'events#create'
   get '/about', to: 'users#about', as: 'about'
+  delete '/users/:id', to: 'users#destroy'
+  get '/about', to: 'users#about', as: 'about'
 
+  
+    delete '/events/:id', to: 'events#destroy'
 end

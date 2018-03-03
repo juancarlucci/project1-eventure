@@ -5,8 +5,8 @@ class AttendanceController < ApplicationController
   end
 
   def create
-    @library = Library.find(params[:library_id])
-    @library.users.push(current_user)  # no error handling currently
+    @event = Event.find(params[:event_id])
+    @event.users.push(current_user)  # no error handling currently
 
     redirect_to current_user
   end
