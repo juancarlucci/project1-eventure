@@ -35,6 +35,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def about
+  end
+
+
+  def about
+    # redirect_to about_path
+
+  end
+
   private
 
   def user_params
