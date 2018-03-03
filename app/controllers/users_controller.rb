@@ -36,7 +36,8 @@ class UsersController < ApplicationController
 
 
   def about
-    redirect_to about_path_url
+    # redirect_to about_path
+
   end
 
   private
