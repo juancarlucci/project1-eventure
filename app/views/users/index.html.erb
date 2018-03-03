@@ -2,7 +2,7 @@
 
 <!-- <img src="assets/pablo-unsplash.jpg"> -->
 <header>
-<% if current_user %>
+<% if !current_user %>
 <%= render '/users/partials/form' %>
 <% end %>
 </header>
@@ -12,38 +12,10 @@
     <h2>Events</h2>
     <section>
 
-      Event 1
-      <div>
-        <h3><%=Event.find(1).event_name %></h3>
-        <div>
-          <p><%=Event.find(1).event_location %></p>
-          <p><%=Event.find(1).event_date %></p>
-          <p><%=Event.find(1).event_description %></p>
-        </div>
-      </div>
+
+    
     </section>
-    <section>
-      Event 2
-      <div>
-        <h3><%=Event.find(2).event_name %></h3>
-        <div>
-          <p><%=Event.find(2).event_location %></p>
-          <p><%=Event.find(2).event_date %></p>
-          <p><%=Event.find(2).event_description %></p>
-        </div>
-      </div>
-    </section>
-    <section>
-      Event 3
-      <div>
-        <h3><%=Event.find(3).event_name %></h3>
-        <div>
-          <p><%=Event.find(3).event_location %></p>
-          <p><%=Event.find(3).event_date %></p>
-          <p><%=Event.find(3).event_description %></p>
-        </div>
-      </div>
-    </section>
+
   </div>
 </div>
 <footer>

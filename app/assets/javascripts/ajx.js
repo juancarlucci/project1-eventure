@@ -38,10 +38,11 @@ let displayEvents = function(json) {
   // console.log(event);
 
       var eventInstance = `
+        <div class="event-section">
         <div class="event_item">
-          <p class="badge">${i}</p>
           <p class="title">${event.name.text}</p>
-          <button onclick='save(${i})'></button>
+          <button onclick='save(${i})'>Add</button>
+        </div>
         </div>
          `;
 
