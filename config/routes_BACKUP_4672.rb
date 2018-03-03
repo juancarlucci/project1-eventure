@@ -10,10 +10,9 @@ Rails.application.routes.draw do
   get '/events/new', to: 'events#new', as: 'new_event'
   get '/events/:id', to: 'events#show', as: 'event'
   post '/events', to: 'events#create'
-  get '/about', to: 'users#about', as: 'about'
-  delete '/users/:id', to: 'users#destroy'
-  get '/about', to: 'users#about', as: 'about'
+<<<<<<< HEAD
+  get '/about', to: 'users#about'
+=======
+>>>>>>> aacaadf06ca172121c0d01ebad172e223fd4a8a7
 
-  
-    delete '/events/:id', to: 'events#destroy'
 end
