@@ -5,29 +5,29 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
   </head>
 
   <body>
-    <nav>
-
-      <%= link_to image_tag("logo.png"), root_path %>
-      <%= link_to "About", about_path %>
+    <nav class="white">
+      <div class="nav-wrapper">
+      <%= link_to image_tag("logosample.jpeg"), root_path, class: "brand-logo" %>
+      <ul id="nav-mobile" class="right hide-on-med-and-down ">
       <% if current_user %>
-        <%= link_to "Profile", user_path(current_user) %>
-        <%= link_to "Log Out", logout_path %>
+      <li>  <%= link_to "Profile", user_path(current_user), class: "black-text" %></li>
+      <li>   <%= link_to "Log Out", logout_path, class: "black-text grey lighten-2 btn" %></li>
       <% else %>
-        <%= link_to "Sign Up", new_user_path %>
-        <%= link_to "Log In", login_path %>
-        <%= link_to "About", about_path %>
-
-
+        <li> <%= link_to "Sign Up", new_user_path, class: "black-text" %></li>
+        <li> <%= link_to "Log In", login_path, class: "black-text grey lighten-2 btn" %></li>
       <% end %>
+    </ul>
+    </div>
     </nav>
     <%= yield %>
-    <footer>
-    © Eventures Ltd.
+
+    <footer class="page-footer center-align indigo lighten-3">
+    <p>© Eventures Ltd.</p>
     </footer>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>

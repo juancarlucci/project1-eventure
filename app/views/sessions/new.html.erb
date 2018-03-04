@@ -1,13 +1,21 @@
 
-
+<div class="row">
 <%= form_for @user, local: true,  url: "/sessions", method: "post" do |f| %>
-<h2>Login</h2>
-  <div>
-    <%= f.text_field :email, placeholder: "Email" %>
+<div class="col s4 offset-s4 card-panel log-in">
+  <h2 class="center-align">Login</h2>
+
+  <% flash.each do |key, value| %>
+  <div class="red-text alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <%= f.text_field :email, placeholder: "Email" %>
 
 
-    <%= f.password_field :password, placeholder: "Password" %>
-
-  <%= f.submit "Log In" %>
+  <%= f.password_field :password, placeholder: "Password" %>
+  <div class="center-align">
+  <%= f.submit "Log In", class: "btn" %>
   </div>
+  <div class="right-align"><%= link_to "Forgot Password"%></div>
+
+</div>
 <% end %>
+</div>

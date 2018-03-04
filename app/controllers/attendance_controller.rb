@@ -5,8 +5,9 @@ class AttendanceController < ApplicationController
   end
 
   def create
+    @user = User.find(params[:user_id])
     @event = Event.find(params[:event_id])
-    @event.users.push(current_user)  # no error handling currently
+    @user.events << @event  # no error handling currently
 
     redirect_to current_user
   end

@@ -15,4 +15,7 @@
 //= require jquery_ujs
 //= require ajx.js
 //= require turbolinks
+//= require materialize-sprockets
 //= require_tree .
+
+$('.carousel').carousel({shift: 150});
