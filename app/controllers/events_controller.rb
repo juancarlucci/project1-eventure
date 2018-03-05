@@ -10,9 +10,13 @@ class EventsController < ApplicationController
     def create
       # @event = Event.create(event_params)
       # redirect_to events_path
-      @event=Event.new(post_permit)
+
+      @user = User.find(params[:user_id])
+      @event= Event.new(post_permit)
+
       if(@event.save)
-      render json: @event
+        @user.events << @event
+        render json: @event
       end
     end
 
@@ -26,7 +30,7 @@ class EventsController < ApplicationController
       @event = Event.find_by_id(params[:id])
       @event.destroy
       flash[:notice] = "Successfully removed event."
-      redirect_to root_path
+      redirect_to user_path(current_user)
     end
 
 

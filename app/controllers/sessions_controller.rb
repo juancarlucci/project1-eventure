@@ -6,13 +6,14 @@ class SessionsController < ApplicationController
   def create
     user_params = params.require(:user).permit(:email, :password)
     # confirm that email/password combination is correct
-    @user = User.confirm(user_params)
-    if @user
-      login(@user)
-      redirect_to @user
-    else
-      redirect_to login_path
-    end
+      @user = User.confirm(user_params)
+      if @user
+        login(@user)
+        redirect_to @user
+      else
+        flash[:notice] = "Incorrect Email Address or Password"
+        redirect_to login_path
+      end
   end
 
   def destroy

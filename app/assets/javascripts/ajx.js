@@ -5,7 +5,7 @@ var token = 'DQVX342GH577YJBOWRDB';
 // let fullURL = `https://www.eventbriteapi.com/v3/events/search/?token= ${token}`;
 let fullURL = "https://www.eventbriteapi.com/v3/events/search/?token=DQVX342GH577YJBOWRDB"
 let barca = "https://www.eventbriteapi.com/v3/events/search/?sort_by=distance&location.address=barcelona%2C+spain&start_date.keyword=this_week&token=DQVX342GH577YJBOWRDB"
-let sf = `https://www.eventbriteapi.com/v3/events/search/?q=Music&sort_by=distance&location.address=san+francisco&start_date.keyword=this_week&token=${token}`
+let sf = `https://www.eventbriteapi.com/v3/events/search/?sort_by=distance&location.address=san+francisco&start_date.keyword=this_week&token=${token}`
 
 //Halim tab idea
 var tab=[]
@@ -17,6 +17,7 @@ $.ajax({
   success: function(json) {
 
     displayEvents(json);
+
   },
   error: function() {
     alert("There was an error getting event data.");
@@ -40,8 +41,10 @@ let displayEvents = function(json) {
       var eventInstance = `
         <div class="event-section">
         <div class="event_item">
-          <p class="title">${event.name.text}</p>
-          <button onclick='save(${i})'>Add</button>
+          <div class="row event-row">
+            <button onclick='save(${i})' class="btn btn-floating sidebyside">+</button>
+            <p class="title sidebyside">${event.name.text}</p>
+          </div>
         </div>
         </div>
          `;
@@ -68,7 +71,7 @@ function save(index){
 
     },
     success: function(data){
-      $('#event_list').append(`<h3>${data.event_name}</h3>`)
+      $('#event_list').append(`<p class="sidebyside">${data.event_name}</p> <button class="btn btn-floating sidebyside">X</button>`)
     },
     error:function(){
       alert('not added')

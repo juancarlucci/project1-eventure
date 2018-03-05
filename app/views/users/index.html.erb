@@ -1,23 +1,18 @@
 
 
 <!-- <img src="assets/pablo-unsplash.jpg"> -->
-<header>
+<header class="background">
+
 <% if !current_user %>
 <%= render '/users/partials/form' %>
 <% end %>
+
 </header>
-<div class= "about">
-  <p>Eventures is an app that helps people socialize within the San Francisco Area. We provide and list the events and allow access to events. You will also be able to add the event to your calendar where you can view it on your profile. </p>
-  <div class="events">
-    <h2>Events</h2>
-    <section>
 
-
-
-    </section>
-
+<div class="row valign-wrapper">
+  <h4 class="col s4 offset-s1"><%= image_tag("logosample.jpeg")%>Eventures is an app that helps people socialize within the San Francisco Area. We provide and list the events and allow access to events. You will also be able to add the event to your calendar where you can view it on your profile. </h4>
+  <div class="col s5 offset-s2">
+    <%= image_tag("events.png") %>
   </div>
 </div>
-<footer>
-© Eventures Ltd.
-</footer>
+<%= render '/users/partials/about' %>

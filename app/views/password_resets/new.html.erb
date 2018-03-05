@@ -1,0 +1,12 @@
+
+<div class="row">
+  <div class="col s4 offset-s4 card-panel ">
+    <h3>Forgot Password</h3>
+    <%= form_tag password_resets_path, :method => :post do %>
+    <div class="field">
+      <%= label_tag :email %><br />
+      <%= text_field_tag :email %> <%= submit_tag "Reset my password!" %>
+    </div>
+  <% end %>
+  </div>
+</div>
