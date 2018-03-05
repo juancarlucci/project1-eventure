@@ -30,19 +30,21 @@ $.ajax({
   }
 });
 
-
+let allEeventsList = [];
 let displayEvents = function(json) {
 
   tab = json.events;
 
   json.events.forEach(function(event, i) {
-  // console.log(event);
+    // allEeventsList.push(event);
+    // save(event);
+  console.log(event.name.text);
 
       var eventInstance = `
         <div class="event-section">
         <div class="event_item">
           <div class="row event-row">
-            <button onclick='save(${i})' class="btn btn-floating sidebyside">+</button>
+            <button onclick='add(${i})' class="btn btn-floating sidebyside">+</button>
             <p class="title sidebyside">${event.name.text}</p>
           </div>
         </div>
@@ -54,28 +56,56 @@ let displayEvents = function(json) {
 
 }; //end displayEvents
 
-events_list = [];
-function save(index){
-  console.log(tab[index].description.text);
-  events_list.push(tab[index]);
-
-
-
-  //Halim internal AJAX
-  $.ajax({
-    url: '/events',
-    method:'POST',
-    data: {
-    event_name: tab[index].name.text,
-    event_description: tab[index].description.text
-
-    },
-    success: function(data){
-      $('#event_list').append(`<p class="sidebyside">${data.event_name}</p> <button class="btn btn-floating sidebyside">X</button>`)
-    },
-    error:function(){
-      alert('not added')
-    }
-  });
-
-};
+// save(allEeventsList);
+// events_list = [];
+// function add(index){
+//   console.log(tab[index].description.text);
+//   events_list.push(tab[index]);
+//
+//
+//
+//   //Halim internal AJAX
+//   $.ajax({
+//     url: '/users',
+//     method:'POST',
+//     data: {
+//     event_name: tab[index].name.text,
+//     event_description: tab[index].description.text
+//
+//     },
+//     success: function(data){
+//
+//       $('#event_list').append(`<p class="sidebyside">${data.event_name}</p> <button class="btn btn-floating sidebyside">X</button>`)
+//     },
+//     error:function(){
+//       alert('not added')
+//     }
+//   });
+//
+// };
+//
+//
+// function save(event){
+//  console.log(event);
+//
+//
+//   $.ajax({
+//     url: '/events',
+//     method:'POST',
+//     data: {
+//         event_name: event.name.text,
+//         event_description: event.description.text
+//
+//         },
+//     success: function(data){
+//
+//       $('#event_list').append(`<p class="sidebyside">${data.event_name}</p> <button class="btn btn-floating sidebyside">+</button>`)
+//     },
+//     error:function(a, b, c){
+//       console.log(a);
+//       console.log(b);
+//       console.log(c);
+//     }
+//   });
+//
+// };

@@ -22,6 +22,11 @@ class UsersController < ApplicationController
       redirect_to @user
     end
   end
+  def add
+    @user = User.find(params[:user_id])
+    @event = Event.find(params[:event_id])
+    @user.events << @event
+  end
 
   def show
     @user = User.find_by_id(params[:id])

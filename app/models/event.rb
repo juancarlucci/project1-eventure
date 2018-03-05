@@ -1,4 +1,4 @@
 class Event < ApplicationRecord
-  has_many :users, through: :attendances
   has_many :attendances, dependent: :destroy
+  has_many :users, through: :attendances
 end
