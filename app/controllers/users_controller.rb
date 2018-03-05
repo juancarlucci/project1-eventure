@@ -12,9 +12,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    login(@user)
-    redirect_to @user
+    @user= User.new(user_params)
+    if User.exists?(email: [@user.email])
+      redirect_to login_path
+      flash[:notice] = "User Exists!"
+    else
+      @user.save
+      login(@user)
+      redirect_to @user
+    end
   end
 
   def show
@@ -29,7 +35,7 @@ class UsersController < ApplicationController
       @user.destroy
       session[:user_id] = nil
       flash[:notice] = "Successfully deleted profile."
-      redirect_to root_path
+      redirect_to user_path(current_user)
     else
       redirect_to user_path(current_user)
     end
