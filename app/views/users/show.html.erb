@@ -10,7 +10,7 @@
       <h4 class="card-panel purple darken-4 white-text center-align">My Events</h4>
       <!-- Events -->
       <div id="event_list">
-        <% @events.each do |event| %>
+        <% @user.events.each do |event| %>
         <div class="row event-row">
           <p class= "sidebyside"><%= event.event_name %></p>
           <%= button_to "X", {:controller => :events, :action => 'destroy', :id => event.id }, :method => :delete, class: "btn-floating pulse sidebyside" %>

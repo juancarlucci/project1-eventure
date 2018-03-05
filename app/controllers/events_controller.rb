@@ -10,9 +10,13 @@ class EventsController < ApplicationController
     def create
       # @event = Event.create(event_params)
       # redirect_to events_path
-      @event=Event.new(post_permit)
+
+      @user = User.find(params[:user_id])
+      @event= Event.new(post_permit)
+
       if(@event.save)
-      render json: @event
+        @user.events << @event
+        render json: @event
       end
     end
 

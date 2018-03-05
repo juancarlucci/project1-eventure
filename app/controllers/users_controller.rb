@@ -14,8 +14,8 @@ class UsersController < ApplicationController
   def create
     @user= User.new(user_params)
     if User.exists?(email: [@user.email])
-      flash[:notice] = "User Exists!"
       redirect_to login_path
+      flash[:notice] = "User Exists!"
     else
       @user.save
       login(@user)

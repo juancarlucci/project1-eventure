@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   delete '/users/:id', to: 'users#destroy'
   get '/users/:user_id/events', to: 'attendances#index', as: 'attendances'
   post '/events/:event_id/users', to: 'atendances#create', as: 'new_attendance'
-
-    delete '/events/:id', to: 'events#destroy'
+  delete '/events/:id', to: 'events#destroy'
+  resources :password_resets
 end
