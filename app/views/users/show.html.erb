@@ -37,7 +37,12 @@
   <aside class="col s5 offset-s0.5">
 
     <h4 class="card-panel purple darken-4 white-text center-align">Events around town</h4>
-    <div id="info"></div>
+    <% @events.each do |event| %>
+    <div class="row event-row">
+      <p class= "sidebyside"><%= event.event_name %> <%= event.event_date %></p>
+      <%= button_to "+", {:controller => :attendance, :action => 'create', :event_id => event.id }, :method => :create, class: "btn-floating pulse sidebyside" %>
+    </div>
+    <% end %>
 
 
 

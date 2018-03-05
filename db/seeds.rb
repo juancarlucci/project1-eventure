@@ -13,5 +13,8 @@ User.delete_all
     last_name: Faker::Name.last_name,
     email: Faker::Internet.safe_email,
     password_digest: "password"
-    )
-    end
+  )
+  Event.create!(event_name: Faker::Name.first_name,
+    event_description: Faker::HitchhikersGuideToTheGalaxy.location,
+    event_date: Faker::Date.forward(3))
+  end

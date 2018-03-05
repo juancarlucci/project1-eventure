@@ -24,7 +24,7 @@ img{
 .card-panel{
   margin-top: 0;
 }
-aside{
+#info, aside{
   height: 480px;
   overflow-y: scroll;
 }
@@ -59,6 +59,6 @@ footer{
   overflow-y: scroll;
   height: 480px;
 }
-#event_list .event-row, .event_item .event-row{
+#event_list .event-row, .row .event-row{
   margin-left: 0;
 }

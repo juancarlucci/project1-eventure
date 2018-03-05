@@ -11,13 +11,23 @@ class EventsController < ApplicationController
       # @event = Event.create(event_params)
       # redirect_to events_path
 
-      @user = User.find(params[:user_id])
-      @event= Event.new(post_permit)
+      # @user = User.find(params[:user_id])
+      # @event= Event.new(post_permit)
+      # @user = User.find(params[:user_id])
+      # @event = Event.find(params[:event_id])
+      # @user.events << @event
 
-      if(@event.save)
-        @user.events << @event
-        render json: @event
-      end
+      # if(@event.save)
+      #   # @user.events << @event
+      #   render json: @event
+      # end
+    end
+    def add
+      @user = User.find(params[:user_id])
+      @event = Event.find(params[:event_id])
+      @user.events << @event  # no error handling currently
+
+      redirect_to current_user
     end
 
     def show
