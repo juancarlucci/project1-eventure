@@ -42,7 +42,6 @@ let displayEvents = function(json) {
         <div class="event-section">
         <div class="event_item">
           <div class="row event-row">
-            <button onclick='save(${i})' class="btn btn-floating sidebyside">+</button>
             <p class="title sidebyside">${event.name.text}</p>
           </div>
         </div>
@@ -54,28 +53,28 @@ let displayEvents = function(json) {
 
 }; //end displayEvents
 
-events_list = [];
-function save(index){
-  console.log(tab[index].description.text);
-  events_list.push(tab[index]);
+// events_list = [];
+// function save(index){
+//   console.log(tab[index].description.text);
+//   events_list.push(tab[index]);
+//
+//
+//
+//   //Halim internal AJAX
+//   $.ajax({
+//     url: '/events',
+//     method:'POST',
+//     data: {
+//     event_name: tab[index].name.text,
+//     event_description: tab[index].description.text
+//
+//     },
+//     success: function(data){
+//       $('#event_list').append(`<p class="sidebyside">${data.event_name}</p> <button class="btn btn-floating sidebyside">X</button>`)
+//     },
+//     error:function(){
+//       alert('not added')
+//     }
+//   });
 
-
-
-  //Halim internal AJAX
-  $.ajax({
-    url: '/events',
-    method:'POST',
-    data: {
-    event_name: tab[index].name.text,
-    event_description: tab[index].description.text
-
-    },
-    success: function(data){
-      $('#event_list').append(`<p class="sidebyside">${data.event_name}</p> <button class="btn btn-floating sidebyside">X</button>`)
-    },
-    error:function(){
-      alert('not added')
-    }
-  });
-
-};
+// };
