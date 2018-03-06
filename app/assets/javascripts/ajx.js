@@ -2,10 +2,10 @@
 
 // var token = 'GGAQ2BUKIRGJMZMU55YZ';
 var token = 'DQVX342GH577YJBOWRDB';
-// let fullURL = `https://www.eventbriteapi.com/v3/events/search/?token= ${token}`;
-let fullURL = "https://www.eventbriteapi.com/v3/events/search/?token=DQVX342GH577YJBOWRDB"
-let barca = "https://www.eventbriteapi.com/v3/events/search/?sort_by=distance&location.address=barcelona%2C+spain&start_date.keyword=this_week&token=DQVX342GH577YJBOWRDB"
-let sf = `https://www.eventbriteapi.com/v3/events/search/?sort_by=distance&location.address=san+francisco&start_date.keyword=this_week&token=${token}`
+// var fullURL = `https://www.eventbriteapi.com/v3/events/search/?token= ${token}`;
+var fullURL = "https://www.eventbriteapi.com/v3/events/search/?token=DQVX342GH577YJBOWRDB"
+var barca = "https://www.eventbriteapi.com/v3/events/search/?sort_by=distance&location.address=barcelona%2C+spain&start_date.keyword=this_week&token=DQVX342GH577YJBOWRDB"
+var sf = `https://www.eventbriteapi.com/v3/events/search/?sort_by=distance&location.address=san+francisco&start_date.keyword=this_week&token=${token}`
 
 //Halim tab idea
 var tab=[]
@@ -25,13 +25,13 @@ $.ajax({
   beforeSend: function() {
     $("#page").append("Loading");
   },
-  complete: function() {
+  compvare: function() {
     $("#loading").remove();
   }
 });
 
-let allEeventsList = [];
-let displayEvents = function(json) {
+var allEeventsList = [];
+var displayEvents = function(json) {
 
   tab = json.events;
 
@@ -44,7 +44,6 @@ let displayEvents = function(json) {
         <div class="event-section">
         <div class="event_item">
           <div class="row event-row">
-            <button onclick='add(${i})' class="btn btn-floating sidebyside">+</button>
             <p class="title sidebyside">${event.name.text}</p>
           </div>
         </div>
@@ -56,9 +55,8 @@ let displayEvents = function(json) {
 
 }; //end displayEvents
 
-// save(allEeventsList);
 // events_list = [];
-// function add(index){
+// function save(index){
 //   console.log(tab[index].description.text);
 //   events_list.push(tab[index]);
 //
@@ -66,7 +64,7 @@ let displayEvents = function(json) {
 //
 //   //Halim internal AJAX
 //   $.ajax({
-//     url: '/users',
+//     url: '/events',
 //     method:'POST',
 //     data: {
 //     event_name: tab[index].name.text,
@@ -74,7 +72,6 @@ let displayEvents = function(json) {
 //
 //     },
 //     success: function(data){
-//
 //       $('#event_list').append(`<p class="sidebyside">${data.event_name}</p> <button class="btn btn-floating sidebyside">X</button>`)
 //     },
 //     error:function(){

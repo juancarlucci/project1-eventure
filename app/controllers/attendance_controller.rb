@@ -5,10 +5,22 @@ class AttendanceController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
     @event = Event.find(params[:event_id])
-    @user.events << @event  # no error handling currently
+    if current_user.events.exists?(event_name: @event.event_name)
+      flash[:notice] = "Event already in your calendar"
+      redirect_to current_user
+    else
+    current_user.events << @event  # no error handling currently
 
     redirect_to current_user
+    end
+  end
+
+  def destroy
+    @event = current_user.events.find(params[:id])
+    # @event.destroy
+    current_user.events.delete(@event)
+    flash[:notice] = "Successfully removed event."
+    redirect_to user_path(current_user)
   end
 end

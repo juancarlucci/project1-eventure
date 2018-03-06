@@ -11,9 +11,12 @@ Rails.application.routes.draw do
   get '/events/:id', to: 'events#show', as: 'event'
   post '/events', to: 'events#create'
   # get '/about', to: 'users#about', as: 'about'
+  get '/attendance/new', to: 'attendance#new', as: 'new_attendance'
+  post '/attendance', to: 'attendance#create'
+  get '/attendance', to: 'attendance#index'
+  delete '/attendance/:id', to: 'attendance#destroy'
   delete '/users/:id', to: 'users#destroy'
-  get '/users/:user_id/events', to: 'attendances#index', as: 'attendances'
-  post '/events/:event_id/users', to: 'atendances#create', as: 'new_attendance'
+  # post '/events/:event_id/users', to: 'atendances#create', as: 'new_attendance'
   delete '/events/:id', to: 'events#destroy'
   resources :password_resets
 end

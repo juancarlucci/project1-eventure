@@ -12,7 +12,20 @@ class EventsController < ApplicationController
       # @event = Event.create(event_params)
       # redirect_to events_path
 
+      # @user = User.find(params[:user_id])
+      # @event= Event.new(post_permit)
+      # @user = User.find(params[:user_id])
+      # @event = Event.find(params[:event_id])
+      # @user.events << @event
+
+      # if(@event.save)
+      #   # @user.events << @event
+      #   render json: @event
+      # end
+    end
+    def add
       @user = User.find(params[:user_id])
+<<<<<<< HEAD
       # TODO: check if event is already in db
       @look_for_event = Event.find_by(:event_name, event_params[:event_name])
       if @look_for_event != nil
@@ -29,6 +42,12 @@ class EventsController < ApplicationController
           render json: @event.to_json
         end
       end
+=======
+      @event = Event.find(params[:event_id])
+      @user.events << @event  # no error handling currently
+
+      redirect_to current_user
+>>>>>>> fb585de33ae2a0d6c1286d3a1f2d4efd6d0e2533
     end
 
 

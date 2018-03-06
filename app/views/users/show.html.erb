@@ -7,13 +7,13 @@
 <main class="row">
   <div class="col s5 offset-s1">
     <div class= "myevents">
-      <h4 class="card-panel purple darken-4 white-text center-align">My Events</h4>
+      <h4 class="card-panel grey white-text center-align">My Events</h4>
       <!-- Events -->
       <!-- <div id="event_list"> -->
         <% @user.events.each do |event| %>
-        <div class="row event-row">
-          <p class= "sidebyside"><%= event.event_name %></p>
-          <%= button_to "X", {:controller => :events, :action => 'destroy', :id => event.id }, :method => :delete, class: "btn-floating pulse sidebyside" %>
+        <div class="row event-row card-panel grey lighten-2">
+          <p class= "sidebyside col"><%= event.event_name %>   <%= event.event_date %></p>
+          <%= button_to "X", {:controller => :attendance, :action => 'destroy', :id => event.id }, :method => :delete, class: "btn-floating pulse grey sidebyside col" %>
         </div>
         <% end %>
       <!-- </div> -->
@@ -36,6 +36,7 @@
 
   <aside class="col s5 offset-s0.5">
 
+<<<<<<< HEAD
     <h4 class="card-panel purple darken-4 white-text center-align">Events around town</h4>
     <!-- <div id="info"></div> -->
     <% @events.each do |event| %>
@@ -46,6 +47,15 @@
     <% end %>
 
     </div>
+=======
+    <h4 class="card-panel grey white-text center-align">Events around town</h4>
+    <% @events.each do |event| %>
+    <div class="row event-row card-panel grey lighten-2">
+      <p class= "sidebyside col"><%= event.event_name %>   <%= event.event_date %></p>
+      <%= button_to "+", {:controller => :attendance, :action => 'create', :event_id => event.id }, :method => :create, class: "btn-floating pulse grey sidebyside col" %>
+    </div>
+    <% end %>
+>>>>>>> fb585de33ae2a0d6c1286d3a1f2d4efd6d0e2533
 
 
 
